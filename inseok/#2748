@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+
+
+
+
+long long calFibo(int num){
+		
+		long long f0=0;
+		long long f1=1;
+		long long f2=0;
+		while(num>0) {
+
+
+    		
+			f2=f0+f1;
+			f0=f1;
+			f1=f2;
+			num--;
+		}
+		
+		return f1; 
+	}
+
+int main(){
+   
+
+    int num=0;
+    cin>>num;
+    if (num==0)
+        cout<<0;
+    else
+        cout<<calFibo(num-1);
+
+    return 0;
+
+
+}
