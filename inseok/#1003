@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int>l;
+vector<long long>v1,v2;
+
+
+int main(){
+int temp;
+int num=0;
+
+    v1.push_back(1);
+    v1.push_back(0);
+    v2.push_back(0);
+    v2.push_back(1);
+
+    cin>>num;
+    for(int i=0;i<num;i++){
+        cin>>temp;
+        l.push_back(temp);
+    }
+
+while(num>0){
+
+   if(l[(l.size()-num)]==0){
+        cout<<1<<" "<<0<<endl;
+        
+    }
+    else if(l[(l.size()-num)]==1){    
+        cout<<0<<" "<<1<<endl;
+        
+    }
+    for(int i=2;i<=l[l.size()-num];i++){
+     
+
+        v1.push_back(v1[i-1]+v1[i-2]);
+        v2.push_back(v2[i-1]+v2[i-2]);
+        
+        if(i==l[l.size()-num]){
+            cout<<v1[i]<<" "<<v2[i]<<endl;
+            }
+        }    
+    
+    num--;
+}
+    
+
+    
+    
+return 0;
+
+}
